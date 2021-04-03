@@ -1,0 +1,126 @@
+<template name="AppLayout">
+  <head>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- {{> Header}} -->
+  <div class="back">
+    <div title="Back to Menu" class="backArrow" onclick="goBack()">
+      <i class="fas fa-chevron-circle-left"></i>
+      <p style="padding: 10px; padding-top: 15px">Back</p>
+    </div>
+  </div>
+  <main class="app-layout">{{> Template.dynamic template=main}}</main>
+  <style>
+    /* Arrow Styling */
+    .backArrow {
+      border-radius: 1em;
+      width: 120px;
+      height: 1em;
+      align-items: center;
+      display: flex;
+      font-size: 25px;
+      line-height: 25px;
+      padding: 25px;
+
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      color: white;
+
+      -webkit-touch-callout: none;
+      -khtml-user-select: none;
+    }
+    .backArrow:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+    .backArrow:active {
+      position: relative;
+      right: 2px;
+    }
+
+    /* Document Styling */
+    body {
+      background: pink;
+      color: white;
+      font-family: "Open Sans", sans-serif;
+    }
+    header {
+      text-align: center;
+      font-size: 24pt;
+    }
+    .back {
+      padding-top: 2em;
+      margin: auto;
+    }
+    /* error */
+
+    .error-notice {
+      margin: 5px;
+      /* Make sure to keep some distance from all sides */
+    }
+
+    .oaerror {
+      width: 80%;
+      background-color: #ffffff;
+      padding: 20px;
+      border: 1px solid #eee;
+      border-left-width: 5px;
+      border-radius: 3px;
+      margin: 10px auto;
+      font-family: "Open Sans", sans-serif;
+      font-size: 16px;
+    }
+
+    .danger {
+      border-left-color: #d9534f;
+      /* Left side border color */
+      background-color: rgba(217, 83, 79, 0.1);
+      /*Same color as the left border with reduced alpha to 0.1*/
+    }
+
+    .danger strong {
+      color: #d9534f;
+    }
+
+    /* alert */
+
+    .alert {
+      -moz-animation: cssAnimation 0s ease-in 5s forwards;
+      /* Firefox */
+      -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+      /* Safari and Chrome */
+      -o-animation: cssAnimation 0s ease-in 5s forwards;
+      /* Opera */
+      animation: cssAnimation 0s ease-in 5s forwards;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+
+    @keyframes cssAnimation {
+      to {
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+    }
+
+    @-webkit-keyframes cssAnimation {
+      to {
+        width: 0;
+        height: 0;
+        visibility: hidden;
+      }
+    }
+  </style>
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
+</template>

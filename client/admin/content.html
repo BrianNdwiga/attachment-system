@@ -1,0 +1,78 @@
+<template name="content">
+    <head>
+        <!-- Font Awesome -->
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+          rel="stylesheet"
+        />
+        <!-- Google Fonts -->
+        <link
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+          rel="stylesheet"
+        />
+        <!-- MDB -->
+        <link
+          href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css"
+          rel="stylesheet"
+        />
+      </head>
+    <div class="cards">
+        <div class="container">
+            <div class="card-group">
+              <div class="card">
+                <div class="card-body" >
+                    <h1>90</h1>
+                    <h3>Employers</h3>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body" >
+                    <h1>100</h1>
+                    <h3>Attachees</h3>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body" >
+                    <h1>45</h1>
+                    <h3>Applications</h3>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-body" >
+                    <h1>?</h1>
+                    <h3>Help</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <style>
+        h1{
+            text-align: center;
+            font-size: 50px;
+        }
+        h3{
+            text-align: center;
+        }
+        .cards {
+      padding: 2rem 0rem;
+      display: flex;
+    }
+    .card {
+        padding: 15px;
+        border-radius: 0.8em;
+      margin: 10px;
+      width: 150px;
+      height: 150px;
+          box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+          transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+            0.3s box-shadow,
+            0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+        }
+        .card:hover {
+          transform: scale(1.05);
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+        }
+    
+    </style>
+</template>
