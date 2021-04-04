@@ -1,4 +1,4 @@
-<template name="dashboard">
+<template name="adminDashboard">
   <body class="sidebar-is-reduced">
     <header class="l-header">
       <div class="l-header__inner clearfix">
@@ -33,10 +33,10 @@
                 </div>
               </li>
             </a>
-            <a href="/dashboard/attachees">
+            <a href="/dashboard/jobuploads">
               <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Gifts">
-                <div class="c-menu__item__inner"><i class="fa fa-users"></i>
-                  <div class="c-menu-item__title"><span>List of Employers</span></div>
+                <div class="c-menu__item__inner"><i class="fas fa-upload"></i>
+                  <div class="c-menu-item__title"><span>Job uploads</span></div>
                 </div>
               </li>
             </a>
@@ -52,7 +52,7 @@
       </div>
     </div>
   </body>
-  <main class="l-main">
+  <main class="l-main col-12">
   <div class="col-12" style="display: flex;">
     <div class="col-9 content-wrapper content-wrapper--with-bg">
       <h1 class="page-title">Overview</h1>
@@ -533,6 +533,12 @@ main.l-main .page-title {
 }
 
 .fa {
+  color: navy;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px;
+}
+.fas {
   color: navy;
   text-decoration: none;
   font-size: 16px;

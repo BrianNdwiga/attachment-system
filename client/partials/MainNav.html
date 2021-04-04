@@ -19,11 +19,11 @@
   <nav class="main-nav">
     <ul>
       <li><a href="/employer">Employers</a></li>
-      <li><a href="/allAttachments">All Attachments</a></li>
-      {{#if isInRole admin}}
-      <li style="padding-right: 10px"><a href="/dashboard">Dashboard</a></li>
-      {{/if}}
+      <li><a href="/allpostings">All Postings</a></li>
       {{#if currentUser}}
+            <!-- {{#if isInRole admin}} -->
+            <li style="padding-right: 10px"><a href="/dashboard">Dashboard</a></li>
+            <!-- {{/if}} -->
       <div class="dropdown">
         <li class="dropdown-toggle">Welcome, {{username}}</li>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

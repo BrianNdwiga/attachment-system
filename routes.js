@@ -23,6 +23,14 @@ FlowRouter.route('/id', {
 });
 
 // Employer Page
+FlowRouter.route('/allpostings', {
+    name: 'allApplications',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "allPostings" });
+    }
+});
+
+// Employer Page
 FlowRouter.route('/employer', {
     name: 'application',
     action() {
@@ -50,6 +58,14 @@ FlowRouter.route('/login', {
 FlowRouter.route('/dashboard', {
     name: 'dashboard',
     action() {
-        BlazeLayout.render("HomeLayout", { main: "dashboard" });
+        BlazeLayout.render("HomeLayout", { main: "adminDashboard" });
+    }
+});
+
+//Dashboard job uploads Page
+FlowRouter.route('/dashboard/jobuploads', {
+    name: 'frontMainSection',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "uploads" });
     }
 });

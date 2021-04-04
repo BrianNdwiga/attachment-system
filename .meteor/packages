@@ -34,3 +34,5 @@ aldeed:template-extension
 alanning:roles
 msavin:mongol
 twbs:bootstrap
+insecure
+autopublish

@@ -23,6 +23,8 @@ Template.register.events({
         password = template.find("#register-password").value;
         console.log("registered successfully");
         Meteor.call("createNewUsers", email, password, username);
+
+        // Roles.addUsersToRoles(role, ['intern'])
     },
 });
 
