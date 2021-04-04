@@ -11,11 +11,11 @@
       rel="stylesheet"
     />
   </head>
-  <body class="hm-gradient">
-    <main class="col-12">
+  <!-- <body class="hm-gradient"> -->
+    <main style="width: 1200px; height: 500px;">
       <!--MDB Tables-->
-      <div class="container mt-4">
-        <div class="card mb-4">
+      <div>
+        <div class="card">
           <div class="card-body">
             <!-- Grid row -->
             <div class="row">
@@ -38,50 +38,28 @@
               <thead>
                 <tr>
                   <th>#</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Username</th>
+                  <th>Company Name</th>
+                  <th>Job Type</th>
+                  <th>Reference Number</th>
+                  <th>Application link/email</th>
+                  <th>Deadline</th>
+                  <th>Contact email/site</th>
                 </tr>
               </thead>
               <!--Table head-->
               <!--Table body-->
               <tbody>
+                {{#each applications}}
                 <tr>
                   <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
+                  <td>{{companyName}}</td>
+                  <td>{{jobType}}</td>
+                  <td>{{referenceNumber}}</td>
+                  <td>{{link}}</td>
+                  <td>{{deadline}}</td>
+                  <th>{{contact}}</th>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Larry</td>
-                  <td>the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+                {{/each}}
               </tbody>
               <!--Table body-->
             </table>
@@ -92,18 +70,10 @@
 
       <hr class="my-4" />
     </main>
-  </body>
+  <!-- </body> -->
   <style>
     .table {
       font-size: 16px;
-    }
-    .hm-gradient {
-      background-image: linear-gradient(
-        to top,
-        #f3e7e9 0%,
-        #e3eeff 99%,
-        #e3eeff 100%
-      );
     }
     .darken-grey-text {
       color: #2e2e2e;

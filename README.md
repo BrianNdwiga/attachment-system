@@ -8,3 +8,9 @@ meteor
 ```
 
 Open up http://localhost:3000 and see this.
+
+commiting code
+git init
+git add .
+git commit -m "message"
+git push origin main -f

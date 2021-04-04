@@ -10,7 +10,7 @@
   <div class="container">
     <div class="filter">
       <h3>Jobs matching your filter criteria</h3>
-      <span> 5005 results</span>
+      <span> {{applicationsCount}} results</span>
       <div id="filters">
         <span>Filters</span>
         <div class="col-sm-4 mb-3">
@@ -41,32 +41,33 @@
       </div>
       <div class="search area" >
         <div class="row" id="myItems">
+          {{#each applications}}
           <div
-            class="card horizontal col-12"
+            class="card1 horizontal col-12"
             style="display: -webkit-box; height: 170px"
           >
-            <div class="card-image col-3">
+            <div class="card1-image col-3">
               <img
-                src="https://seeklogo.com/images/L/laravel-framework-logo-C10176EC8C-seeklogo.com.png"
+                src="{{logoUrl}}"
                 class="fadeIn"
                 style="border-radius: 8px; height: 90%"
               />
             </div>
-            <div class="card-stacked col-6">
-              <div class="card-body">
-                <h5 class="card-title">Laravel Industrial Attachment</h5>
-                <a href=""><h6>KPLC</h6></a>
-                <p>Nairobi ,Kenya | Fulltime</p>
+            <div class="card1-stacked col-6">
+              <div class="card1-body">
+                <h5 class="card1-title">{{jobTitle}}</h5>
+                <a href=""><h6>{{companyName}}</h6></a>
+                <p>Nairobi ,Kenya | {{jobType}}</p>
               </div>
-              <div class="card-action">
-                <p>Posted at 15:35 PM Tuesday, 30 March 2021</p>
+              <div class="card1-action">
+                <p>Posted at {{createdOn}}</p>
               </div>
             </div>
 
             <div class="vl"></div>
 
             <div class="apply col-3" style="width: 90%">
-              <a href="/id"><button class="button-apply apply">Apply</button></a>
+              <a href="/postings/{{_id}}"><button class="button-apply apply">Apply</button></a>
               <div class="hl"></div>
               <button name="accept" class="button-apply save">
                 <i class="fa fa-heart"></i>
@@ -75,76 +76,7 @@
             </div>
           </div>
           <br />
-
-          <div
-            class="card horizontal col-12"
-            style="display: -webkit-box; height: 170px"
-          >
-            <div class="card-image col-3">
-              <img
-                src="data:image/png;base64,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"
-                class="fadeIn"
-                style="border-radius: 8px; height: 90%"
-              />
-            </div>
-            <div class="card-stacked col-6">
-              <div class="card-body">
-                <h5 class="card-title">Kenya Airways Industrial Attachment</h5>
-                <a href=""><h6>KPLC</h6></a>
-                <p>Nairobi ,Kenya | Fulltime</p>
-              </div>
-              <div class="card-action">
-                <p>Posted at 15:35 PM Tuesday, 30 March 2021</p>
-              </div>
-            </div>
-
-            <div class="vl"></div>
-
-            <div class="apply col-3" style="width: 90%">
-              <a href="/id"><button class="button-apply apply">Apply</button></a>
-              <div class="hl"></div>
-              <button name="accept" class="button-apply save">
-                <i class="fa fa-heart"></i>
-                <span>Save</span>
-              </button>
-            </div>
-          </div>
-          <br />
-
-          <div
-            class="card horizontal col-12"
-            style="display: -webkit-box; height: 170px"
-          >
-            <div class="card-image col-3">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/0/03/KRA_Logo.png"
-                class="fadeIn"
-                style="border-radius: 8px; height: 90%"
-              />
-            </div>
-            <div class="card-stacked col-6">
-              <div class="card-body">
-                <h5 class="card-title">KRA Industrial Attachment</h5>
-                <a href=""><h6>KPLC</h6></a>
-                <p>Nairobi ,Kenya | Fulltime</p>
-              </div>
-              <div class="card-action">
-                <p>Posted at 15:35 PM Tuesday, 30 March 2021</p>
-              </div>
-            </div>
-
-            <div class="vl"></div>
-
-            <div class="apply col-3" style="width: 90%">
-              <a href="/id"><button class="button-apply apply">Apply</button></a>
-              <div class="hl"></div>
-              <button name="accept" class="button-apply save">
-                <i class="fa fa-heart"></i>
-                <span>Save</span>
-              </button>
-            </div>
-          </div>
-          <br />
+          {{/each}}
         </div>
       </div>
     </div>
@@ -203,15 +135,15 @@
       text-align: center;
     }
 
-    /* card */
-    .card {
+    /* card1 */
+    .card1 {
       margin: 1px;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
       transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
         0.3s box-shadow,
         0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
     }
-    .card:hover {
+    .card1:hover {
       transform: scale(1.05);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
     }
@@ -299,19 +231,19 @@
   <script>
     // searcharea script
     function myFunction() {
-      var input, filter, cards, cardContainer, h5, title, i;
+      var input, filter, card1s, card1Container, h5, title, i;
       input = document.getElementById("myFilter");
       filter = input.value.toUpperCase();
-      cardContainer = document.getElementById("myItems");
-      cards = cardContainer.getElementsByClassName("card horizontal");
-      for (i = 0; i < cards.length; i++) {
-        title = cards[i].querySelector(".card-body h5.card-title");
+      card1Container = document.getElementById("myItems");
+      card1s = card1Container.getElementsByClassName("card1 horizontal");
+      for (i = 0; i < card1s.length; i++) {
+        title = card1s[i].querySelector(".card1-body h5.card1-title");
         if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-          cards[i].style.display = "-webkit-box";
-          cards[i].style.visibility = "visible";
+          card1s[i].style.display = "-webkit-box";
+          card1s[i].style.visibility = "visible";
         } else {
-          cards[i].style.visibility = "hidden";
-          cards[i].style.display = "none";
+          card1s[i].style.visibility = "hidden";
+          card1s[i].style.display = "none";
         }
       }
     }

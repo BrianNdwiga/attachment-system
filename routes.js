@@ -15,14 +15,14 @@ FlowRouter.route('/search', {
 });
 
 // Application Page
-FlowRouter.route('/id', {
+FlowRouter.route('/postings/:id', {
     name: 'application',
     action() {
         BlazeLayout.render("HomeLayout", { main: "application" });
     }
 });
 
-// Employer Page
+// allpostings Page
 FlowRouter.route('/allpostings', {
     name: 'allApplications',
     action() {
@@ -66,6 +66,6 @@ FlowRouter.route('/dashboard', {
 FlowRouter.route('/dashboard/jobuploads', {
     name: 'frontMainSection',
     action() {
-        BlazeLayout.render("HomeLayout", { main: "uploads" });
+        BlazeLayout.render("DashboardLayout", { main: "uploads" });
     }
 });

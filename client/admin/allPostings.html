@@ -1,9 +1,59 @@
 <template name="allPostings">
-    hi,
-    {{#each applications}}
-    {{companyName}}
-    {{companyDescription}} {{jobType}} {{jobTitle}}
-                {{referenceNumber}} {{jobDescription}} {{qualifications}} {{link}}
-                {{deadline}} {{contact}}
-    {{/each}}
+  <section id="header" class="jumbotron text-center" style="height: 70px">
+    <h1 class="display-3" style="font-size: 30px">ALL JOB POSTINGS</h1>
+  </section>
+
+  <section id="postings">
+    <div class="container">
+      <div class="row">
+        {{#each applications}}
+        <div class="col-lg-3 mb-3">
+          <div class="card">
+            <div style="display: flex">
+              <img
+                id="companylogo"
+                src="{{logoUrl}}"
+                alt=""
+                style="width: 65px;
+                height: 40px;"
+              />
+              <a href="" class="btn btn-outline-danger btn-sm" id="like"
+                ><i class="far fa-heart"></i
+              ></a>
+            </div>
+            <div class="card-body">
+              <h4 class="card-title" style="width: 100%;">
+                <strong>We need a {{jobTitle}}</strong>
+              </h4>
+              <p class="card-text"><strong>{{companyName}}</strong></p>
+              <p class="card-text">{{jobType}}</p>
+              <p class="card-text"><strong>{{deadline}}</strong></p>
+              <a href="/postings/{{_id}}" class="btn btn-outline-success btn-sm">Read More</a>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .companylogo {
+      border-radius: 8px;
+      padding: 5px;
+    }
+    .card {
+      font-size: 16px;
+      color: black;
+    }
+    .btn {
+      font-size: 14px;
+    }
+    #like {
+      height: 25px;
+      position: absolute;
+      right: 20px;
+      margin: 10px;
+    }
+  </style>
 </template>

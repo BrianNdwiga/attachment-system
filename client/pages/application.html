@@ -25,57 +25,36 @@
         <li class="breadcrumb-item active" aria-current="page">Application</li>
       </ol>
     </nav>
-
+    
     <div style="display: flex">
       <div class="col-9">
-        <h1>Front End Developer - Intern</h1>
-        <h3>Oho Interactive | Somerville, MA</h3>
+        <h1> {{applications.companyName}}
+          <br>
+          {{applications.jobTitle}}</h1>
+          <h3>Reference Number : {{applications.referenceNumber}}</h3>
+        <h3>{{applications.location}} | Kenya</h3>
         <br />
         <p class="internship">Internship</p>
         <h3>Description</h3>
         <p class="description">
-          Job Information OHO Interactive Front-End Developer - 6 Month
-          Internship in Somerville, Massachusetts OHO develops strategies that
-          fuse visually arresting designs with interactive web applications to
-          deliver usable, functional, aesthetic websites and technology
-          applications. If you are creative, like to bring new ideas to life,
-          enjoy pushing the limits of what can be conceived and achieved, and
-          enjoy the camaraderie of working on a winning team then this might be
-          the place for you. We are looking for a multifaceted individual who
-          can bring static designs to life as rich user interfaces using HTML,
-          CSS, and JavaScript. This is a hands-on position that includes
-          opportunities for growth in both usability and back-end development.
+          {{applications.companyDescription}}
+          <br>
+          <h3>Job Description</h3>
+          {{applications.jobDescription}}
           <br />
-          <strong>Internship Details:</strong> * Full-time, paid * Start Date:
-          June/July 2021 * Length: 6 months Responsibilities will include: *
-          Converting designs into standard HTML, CSS * Developing strategies for
-          building web sites that allow for easy future updates by the client *
-          Heavy involvement in user interaction design and development Desired
-          Skills & Experience: * Proficient in HTML, CSS. * Exceptional
-          organization and analytical skills * Excellent interpersonal skills,
-          and ability to work in a team environment * Strong prioritization and
-          multitasking skills when faced with tight deadlines * Knowledge of
-          WCAG Accessibility guidelines * Additional knowledge of Sketch, ES6
-          JavaScript, Twig, is a plus as well a keen eye for design.
+          <strong>Internship Details:</strong> 
+          <br>
+          {{applications.qualifications}}
           <br />
-          Please submit r�sum� and portfolio with some examples of your work
-          (whether that be live sites or code on GitHub). About OHO Interactive
-          OHO Interactive is an award winning digital agency based in the heart
-          of Davis Square, right outside of Boston and accessible via the Red
-          Line.
-          <br />
-          OHO specializes in everything it takes to build a remarkable website:
-          research and strategy, digital design, and development, quality
-          assurance, content strategy, and more. We work with clients across a
-          wide variety of industries, including education, travel, and
-          healthcare. OHO Interactive is an Equal Opportunity Employer
+          If you encounter any issues or want to know more about us please visit us via 
+          <a href="{{applications.contact}}" target="_blank">{{applications.contact}}</a>          
           <br />
           <strong>How to submit application</strong>
           <br />
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis quo
-          officiis, blanditiis quis odio accusamus, harum non, omnis perferendis
-          fugit rerum in consequatur sit. Please send your CV and Cover Letter
-          to <a href=""><strong>hr.kplc@kplc.co.ke</strong></a>
+          Please send your CV and Cover Letter
+          to <a href="{{applications.link}}" target="_blank"><strong>{{applications.link}}</strong></a>
+          <br>
+          Deadline for submissions is on {{applications.deadline}}
         </p>
 
         <!-- email updates -->

@@ -18,8 +18,8 @@
   </head>
   <nav class="main-nav">
     <ul>
-      <li><a href="/employer">Employers</a></li>
       <li><a href="/allpostings">All Postings</a></li>
+      <li><a href="/saved">Saved Jobs</a></li>
       {{#if currentUser}}
             <!-- {{#if isInRole admin}} -->
             <li style="padding-right: 10px"><a href="/dashboard">Dashboard</a></li>
@@ -31,6 +31,7 @@
         </div>
       </div>
       {{else}}
+      <li><a href="/employer">Employers</a></li>
       <li> <a href="/login#sign-in-container">Sign In</a>  | <a href="/login#sign-up-container">Create Account</a></li>
       {{/if}}
     </ul>
@@ -49,6 +50,7 @@
     }
     .dropdown-item{
       font-size: 14px;
+      align-items: center;
       padding: 15px;
       padding-right: 70px;
       text-align: center;
