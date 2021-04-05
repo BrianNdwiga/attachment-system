@@ -47,12 +47,12 @@
           {{applications.qualifications}}
           <br />
           If you encounter any issues or want to know more about us please visit us via 
-          <a href="{{applications.contact}}" target="_blank">{{applications.contact}}</a>          
+          <a href="{{applications.contact}}" target="_blank" onclick="email()">{{applications.contact}}</a>          
           <br />
           <strong>How to submit application</strong>
           <br />
           Please send your CV and Cover Letter
-          to <a href="{{applications.link}}" target="_blank"><strong>{{applications.link}}</strong></a>
+          to <a href="{{applications.link}}" target="_blank" onclick="application()"><strong>{{applications.link}}</strong></a>
           <br>
           Deadline for submissions is on {{applications.deadline}}
         </p>
@@ -108,4 +108,12 @@
       font-size: 16px;
     }
   </style>
+  <script>
+  function email(){
+    window.open('mailto:{{contact}}?subject=subject&body=body');
+  };
+  function application(){
+    window.open('mailto:{{link}}?subject=subject&body=body');
+  };
+  </script>
 </template>

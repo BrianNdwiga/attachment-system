@@ -1,13 +1,14 @@
-<template name="allPostings">
+<template name="saved">
+  {{#if showLiked}} 
   <section id="header" class="jumbotron text-center" style="height: 70px">
-    <h1 class="display-3" style="font-size: 30px">ALL JOB POSTINGS</h1>
+    <h1 class="display-3" style="font-size: 30px">LIKED POSTINGS</h1>
   </section>
 
   <section id="postings">
     <div class="container">
       <div class="row">
         {{#each applications}}
-        <div class="col-lg-3 mb-3">
+        <div class="col-lg-6 mb-6">
           <div class="card">
             <div style="display: flex">
               <img
@@ -28,7 +29,7 @@
               <p class="card-text"><strong>{{companyName}}</strong></p>
               <p class="card-text">{{jobType}}</p>
               <p class="card-text"><strong>{{deadline}}</strong></p>
-              <a href="/postings/{{_id}}" class="btn btn-outline-success btn-sm">Read More</a>
+              <a href="/postings/{{_id}}" class="btn btn-outline btn-sm">Read More</a>
             </div>
           </div>
         </div>
@@ -56,4 +57,7 @@
       margin: 10px;
     }
   </style>
+  {{else}}
+  <h1 style="font: size 20px">No liked Postings</h1>
+  {{/if}}
 </template>

@@ -21,24 +21,27 @@ Template.form.events({
                 deadline = event.target.companyName.value,
                 location = event.target.location.value,
                 contact = event.target.contact.value,
-                logoUrl = event.target.logoUrl.value
+                logoUrl = event.target.logoUrl.value,
 
-            // console.log("name:" + companyName);
-            Applications.insert({
-                companyName: companyName,
-                companyDescription: companyDescription,
-                jobType: jobType,
-                jobTitle: jobTitle,
-                referenceNumber: referenceNumber,
-                jobDescription: jobDescription,
-                qualifications: qualifications,
-                link: link,
-                deadline: deadline,
-                location: location,
-                contact: contact,
-                logoUrl: logoUrl,
-                createdOn: new Date(),
-            });
+
+                // console.log("name:" + companyName);
+                Applications.insert({
+                    companyName: companyName,
+                    companyDescription: companyDescription,
+                    jobType: jobType,
+                    jobTitle: jobTitle,
+                    referenceNumber: referenceNumber,
+                    jobDescription: jobDescription,
+                    qualifications: qualifications,
+                    link: link,
+                    deadline: deadline,
+                    location: location,
+                    contact: contact,
+                    logoUrl: logoUrl,
+                    likes: 0,
+                    likers: [],
+                    createdOn: new Date(),
+                });
             event.target.companyName.value = "";
             event.target.companyDescription.value = "";
             event.target.jobType.value = "";
@@ -57,30 +60,9 @@ Template.form.events({
             return false;
         }
     })
-    // to display the form contents.
-Template.allPostings.helpers({
-    applications: function() {
-        return Applications.find();
-    },
-});
-
-// table
+    // table
 Template.table.helpers({
     applications: function() {
         return Applications.find();
     },
-});
-
-// search
-Template.search.helpers({
-    applications: function() {
-        return Applications.find();
-    },
-});
-
-// total
-Template.search.helpers({
-    applicationsCount: function() {
-        return Applications.find().count()
-    }
 });

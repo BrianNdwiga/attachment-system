@@ -40,10 +40,10 @@
                 </div>
               </li>
             </a>
-            <a href="/dashboard/employers">
+            <a href="/dashboard/users">
               <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Settings">
                 <div class="c-menu__item__inner"><i class="fa fa-users"></i>
-                  <div class="c-menu-item__title"><span>List of Attachees</span></div>
+                  <div class="c-menu-item__title"><span>List of Users</span></div>
                 </div>
               </li>
             </a>
@@ -59,15 +59,7 @@
       <div class="page-content">
         {{> content}}
       </div>
-      <div>
-        <div class="card-group">
-          <div class="card">
-            <div class="card-body" >
-              <h1>Job update subscriptions</h1>
-            </div>
-          </div>
-          </div>
-      </div>
+      {{> subscriptions}}
     </div>
     <div class="col-3">
       {{> right}}

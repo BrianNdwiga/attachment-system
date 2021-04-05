@@ -69,3 +69,19 @@ FlowRouter.route('/dashboard/jobuploads', {
         BlazeLayout.render("DashboardLayout", { main: "uploads" });
     }
 });
+
+//users Dashboard Page
+FlowRouter.route('/dashboard/users', {
+    name: 'users',
+    action() {
+        BlazeLayout.render("DashboardLayout", { main: "usersDashboard" });
+    }
+});
+
+// saved Page
+FlowRouter.route('/saved', {
+    name: 'saved',
+    action() {
+        BlazeLayout.render("HomeLayout", { main: "saved" });
+    }
+});
