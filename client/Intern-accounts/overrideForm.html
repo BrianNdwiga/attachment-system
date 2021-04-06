@@ -1,0 +1,126 @@
+<template name="override-atTitleNew">
+  <div class="at-title">
+    <h3>{{title}}</h3>
+  </div>
+  <style>
+    .at-title {
+      font-weight: bolder;
+      padding: 15px;
+      font-size: 36px;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  </style>
+</template>
+
+<template name="override-atPwdFormBtnNew">
+  <button
+    type="submit"
+    class="at-btn button submit {{submitDisabled}}"
+    id="at-btn"
+  >
+    {{buttonText}}
+  </button>
+</template>
+
+<template name="override-atSigninLinkNew">
+  <div class="at-signin-link" style="padding: 7px">
+    <p>
+      {{preText}}
+      <a
+        href="{{signInLink}}"
+        id="at-signIn"
+        class="at-link at-signin {{disabled}}"
+        >{{linkText}}</a
+      >
+      {{suffText}}
+    </p>
+  </div>
+</template>
+
+<template name="override-atSignupLinkNew">
+  <div class="at-signup-link" style="padding: 7px">
+    <p>
+      {{preText}}
+      <a
+        href="{{signUpLink}}"
+        id="at-signUp"
+        class="at-link at-signup {{disabled}}"
+        >{{linkText}}</a
+      >
+      {{suffText}}
+    </p>
+  </div>
+</template>
+
+<template name="override-atTermsLinkNew">
+  <div class="at-terms-link at-wrap" style="padding: 7px">
+    <p>
+      {{text}} {{#if privacyUrl}}
+      <a href="{{privacyUrl}}" class="{{disabled}}">{{privacyLinkText}}</a>
+      {{/if}} {{#if showTermsAnd}} {{and}} {{/if}} {{#if termsUrl}}
+      <a href="{{termsUrl}}" class="{{disabled}}">{{termsLinkText}}</a>
+      {{/if}}
+    </p>
+  </div>
+</template>
+
+<template name="override-atErrorNew">
+  <div
+    class="at-error alert"
+    style="
+      padding: 1px;
+      text-align: center;
+      background: pink;
+      border-radius: 0.8em;
+      margin-left: 10px;
+      margin-right: 10px;
+    "
+  >
+    {{#each error}}
+    <p>{{errorText}}</p>
+    {{/each}}
+  </div>
+</template>
+
+<template name="override-atSelectInputNew">
+  <div class="at-input">
+    <label for="at-field-{{_id}}">{{displayName}}</label>
+    <select id="at-field-{{_id}}" name="at-field-{{_id}}" class="custom-select">
+      {{#each values}}
+      <option value="{{value}}">{{text}}</option>
+      {{/each}}
+    </select>
+  </div>
+  <style>
+    .custom-select {
+      font-size: 1em;
+      padding: 1.2em 1.7em 1.2em 1.7em;
+      margin-top: 0.6em;
+      margin-bottom: 0.6em;
+      border-radius: 20px;
+      border: none;
+      background: #ebebeb;
+      outline: none;
+      font-weight: bold;
+      transition: 0.4s;
+      width: 90%;
+    }
+  </style>
+</template>
+
+<template name="override-atFormNew">
+  {{#unless hide}}
+  <div class="at-form form-modal">
+    {{#if showTitle}} {{> atTitle}} {{/if}} {{#if showOauthServices}} {{>
+    atOauth}} {{/if}} {{#if showServicesSeparator}} {{> atSep}} {{/if}} {{#if
+    showError}} {{> atError}} {{/if}} {{#if showResult}} {{> atResult}} {{/if}}
+    {{#if showMessage}} {{> atMessage}} {{/if}} {{#if showPwdForm}} {{>
+    atPwdForm}} {{/if}} {{#if showTermsLink}} {{> atTermsLink}} {{/if}} {{#if
+    showSignInLink}} {{> atSigninLink}} {{/if}} {{#if showSignUpLink}} {{>
+    atSignupLink}} {{/if}} {{#if showResendVerificationEmailLink}} {{>
+    atResendVerificationEmailLink}} {{/if}}
+  </div>
+  {{/unless}}
+</template>

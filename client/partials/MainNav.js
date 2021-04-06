@@ -5,17 +5,11 @@ Template.MainNav.events({
 })
 
 Template.MainNav.helpers({
-        username: function() {
-            if (Meteor.user()) {
-                return Meteor.user().username;
-            } else {
-                return " ";
-            }
-        },
-    })
-    // not used
-Template.MainNav.helpers({
-    admin: function() {
-        return Roles.userIsInRole(Meteor.userId(), 'admin');
-    }
-});
+    fullname: function() {
+        if (Meteor.user()) {
+            return Meteor.user().profile.fullname;
+        } else {
+            return "anonymous internet user";
+        }
+    },
+})

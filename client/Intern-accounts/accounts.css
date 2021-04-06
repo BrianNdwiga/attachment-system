@@ -9,6 +9,7 @@
    }
    
    .form-modal {
+       color: black;
        position: relative;
        width: 450px;
        font-size: 14px;
@@ -17,21 +18,30 @@
        left: 50%;
        transform: translateX(-50%);
        background: #fff;
+       border-bottom-left-radius: 20px;
        border-top-right-radius: 20px;
        border-top-left-radius: 20px;
        border-bottom-right-radius: 20px;
        box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1)
    }
    
-   .form-modal button {
+   .form-modal .button {
+       margin-top: 10px;
+       margin-bottom: 10px;
+       width: 100%;
+       letter-spacing: 1px;
        cursor: pointer;
-       position: relative;
-       text-transform: capitalize;
-       font-size: 1em;
+       font-size: 12px;
        z-index: 2;
        outline: none;
        background: #fff;
-       transition: 0.2s;
+       transition: transform 80ms ease-out;
+       border-radius: 20px;
+       border: 1px solid #ec5574;
+       background: #ec5574;
+       font-weight: bold;
+       padding: 12px 45px;
+       text-transform: uppercase;
    }
    
    .form-modal .btn {
@@ -61,19 +71,6 @@
        position: relative;
        width: 100%;
        height: auto;
-   }
-   
-   .form-toggle button {
-       width: 50%;
-       float: left;
-       padding: 1.5em;
-       margin-bottom: 1.5em;
-       border: none;
-       transition: 0.2s;
-       font-size: 1.1em;
-       font-weight: bold;
-       border-top-right-radius: 20px;
-       border-top-left-radius: 20px;
    }
    
    .form-toggle button:nth-child(1) {
@@ -188,35 +185,6 @@
        i {
            display: none!important;
        }
-   }
-   /* error */
-   
-   .error-notice {
-       margin: 5px;
-       /* Make sure to keep some distance from all sides */
-   }
-   
-   .oaerror {
-       width: 80%;
-       background-color: #ffffff;
-       padding: 20px;
-       border: 1px solid #eee;
-       border-left-width: 5px;
-       border-radius: 3px;
-       margin: 10px auto;
-       font-family: 'Open Sans', sans-serif;
-       font-size: 16px;
-   }
-   
-   .danger {
-       border-left-color: #d9534f;
-       /* Left side border color */
-       background-color: rgba(217, 83, 79, 0.1);
-       /*Same color as the left border with reduced alpha to 0.1*/
-   }
-   
-   .danger strong {
-       color: #d9534f;
    }
    /* alert */
    

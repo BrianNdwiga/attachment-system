@@ -1,0 +1,76 @@
+<template name="pleaseLogin">
+  <div class="middle">
+    <h1>Hold Up, Please Login to continue</h1>
+  </div>
+  <br>
+  <a href="/login"><button class="to-login-button">To-Login</button></a>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "montserrat", sans-serif;
+      background: url(https://cdn.wallscloud.net/converted/2305230990-rozovie-gori-LBJD-1920x1200-MM-100.jpg)
+        no-repeat;
+      background-size: cover;
+    }
+
+    .middle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .middle h1 {
+      font-size: 100px;
+      text-transform: uppercase;
+      font-weight: 900;
+      color: #a7abaf82;
+      background-image: url(https://stoleshnica-fasad.ru/wp-content/uploads/2016/03/Panel-iz-stekla-dlya-kukhni-panoramy-prirody-art.-0003-600x190.jpg);
+      -webkit-background-clip: text;
+      animation: water 15s infinite;
+    }
+
+    @keyframes water {
+      from {
+        background-position: left 0 top 0;
+      }
+
+      to {
+        background-position: left 1000px top 0;
+      }
+    }
+    /* card button */
+    .to-login-button {
+        margin-top: 200px;
+        float: right;
+      margin: 25px;
+      width: 190px;
+      height: 50px;
+      font-weight: 100;
+      text-transform: uppercase;
+      color: #fff;
+      letter-spacing: 0.1rem;
+      border: none;
+      border-radius: 100px;
+      transition: 0.3s ease-in-out;
+      background-color: #fe5652;
+    }
+
+    .to-login-button:focus {
+      outline: none;
+    }
+
+    .to-login-button {
+      background: #ec5574;
+    }
+
+    .to-login-button:hover {
+      background: rgb(50, 50, 50, 1);
+    }
+    .to-login-button:hover {
+      font-size: 0.8rem;
+      cursor: pointer;
+    }
+  </style>
+</template>

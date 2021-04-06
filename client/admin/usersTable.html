@@ -10,27 +10,50 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>UserName</th>
+                    <th>Full Name</th>
+                    <th>Employer/Intern</th>
                     <th>Email</th>
                     <th>Date Created</th>
+                    <th>Role</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 {{#each users}}
                 <tr>
-                    <td>{{_id}}</td>
-                    <td>{{userUsername}}</td>
-                    <td>{{userEmail}}h</td>
+                    <td class="user_id">{{_id}}</td>
+                    <td>{{profile.fullname}}</td>
+                    <td>{{profile.role}}</td>
+                    <td>{{userEmail}}</td>
                     <td>{{dateFormat}}</td>
+                    <td>{{roles}}</td>
+                    <td>
+                    {{#if currentEdit}}
+                    <div>
+                        <div class="user_edit">
+                            {{#if isAdmin}}
+                            <button class="toggle-admin">Remove Admin</button>
+                            {{else}}
+                            <button class="toggle-admin">Make Admin</button>
+                            {{/if}}
+                            <button class="delete">Delete User</button>
+                            <i class="fa fa-close close-edit-mode"></i>
+                        </div>
+                    </div>
+                    {{/if}}
+                </td>
                 </tr>
                 {{/each}}
             </tbody>
             <tfoot>
                 <tr>                
                     <th>ID</th>
-                    <th>UserName</th>
+                    <th>Full Name</th>
+                    <th>Employer/Intern</th>
                     <th>Email</th>
                     <th>Date Created</th>
+                    <th>Role</th>
+                    <th>Actions</th>
                 </tr>
             </tfoot>
         </table>
@@ -41,14 +64,38 @@
     }
     .table{
         width: 96%;
-        margin: 50px; 
+        margin-top: 50px; 
         color: black; 
         text-align: center;
     }
+    .user_id:hover {
+    color: grey;
+    background-color: #19283f;
+    cursor: pointer;
+}
+
+.user-edit {
+    background: #FFF;
+    z-index: 10;
+    padding: 20px;
+    width: 280px;
+}
+.delete{
+    border-radius: 4px 4px 4px 4px;
+    color: #ffffff;
+    background-color: rgb(73, 4, 18);
+    border: 0;
+    padding: 5px;
+    cursor: pointer;
+}
+.toggle-admin{
+    border-radius: 4px 4px 4px 4px;
+    color: #ffffff;
+    background-color: #EC5574;
+    border: 0;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
 </style>
-<script>
- $(document).ready(function() {
-    $('#example').DataTable();
-} );
-</script>
 </template>

@@ -57,6 +57,7 @@ Template.form.events({
             event.preventDefault();
             console.log("Form submitted");
             // console.log(event.type);
+            alert('Job Application Uploaded')
             return false;
         }
     })
@@ -64,5 +65,11 @@ Template.form.events({
 Template.table.helpers({
     applications: function() {
         return Applications.find();
-    },
+    }
+});
+
+Template.table.events({
+    'click .js-del': function(event) {
+        Applications.remove(this._id);
+    }
 });

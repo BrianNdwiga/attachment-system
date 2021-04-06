@@ -20,18 +20,18 @@
     <ul>
       <li><a href="/allpostings">All Postings</a></li>
       <li><a href="/saved">Saved Jobs</a></li>
+      <li style="padding-right:10px;"><a href="/employer">Employers</a></li>
       {{#if currentUser}}
-            <!-- {{#if isInRole admin}} -->
+            {{#if isInRole 'admin'}}
             <li style="padding-right: 10px"><a href="/dashboard">Dashboard</a></li>
-            <!-- {{/if}} -->
+            {{/if}}
       <div class="dropdown">
-        <li class="dropdown-toggle">Welcome, {{username}}</li>
+        <li class="dropdown-toggle">Welcome, {{fullname}}</li>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item logout" href="#">Log Out</a>
         </div>
       </div>
       {{else}}
-      <li><a href="/employer">Employers</a></li>
       <li> <a href="/login#sign-in-container">Sign In</a>  | <a href="/login#sign-up-container">Create Account</a></li>
       {{/if}}
     </ul>

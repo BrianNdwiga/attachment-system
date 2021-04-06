@@ -49,16 +49,15 @@ FlowRouter.route('/employer/contactpage', {
 FlowRouter.route('/login', {
     name: 'login',
     action() {
-        BlazeLayout.render("AppLayout", { main: "accounts" });
+        BlazeLayout.render("AppLayout", { main: "newAccounts" });
     }
 });
-
 
 //Admin Dashboard Page
 FlowRouter.route('/dashboard', {
     name: 'dashboard',
     action() {
-        BlazeLayout.render("HomeLayout", { main: "adminDashboard" });
+        BlazeLayout.render("HomeLayout", { main: "front" });
     }
 });
 
@@ -67,6 +66,14 @@ FlowRouter.route('/dashboard/jobuploads', {
     name: 'frontMainSection',
     action() {
         BlazeLayout.render("DashboardLayout", { main: "uploads" });
+    }
+});
+
+//Admin Dashboard Page
+FlowRouter.route('/dashboard/form', {
+    name: 'dashboard',
+    action() {
+        BlazeLayout.render("DashboardLayout", { main: "form" });
     }
 });
 

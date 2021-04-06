@@ -16,6 +16,7 @@
       rel="stylesheet"
     />
   </head>
+  {{#if currentUser}}
   <div class="col-10 container">
     <!-- breadcrumb -->
     <nav aria-label="breadcrumb">
@@ -25,7 +26,6 @@
         <li class="breadcrumb-item active" aria-current="page">Application</li>
       </ol>
     </nav>
-    
     <div style="display: flex">
       <div class="col-9">
         <h1> {{applications.companyName}}
@@ -63,8 +63,12 @@
 
       <div class="col-3">{{>otherJobs}}</div>
     </div>
+
   </div>
   <div>{{>footer}}</div>
+  {{else}}
+  {{>pleaseLogin}}
+  {{/if}}
   <style>
     .breadcrumb:last-child {
       font-weight: 500;
