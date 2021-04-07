@@ -1,0 +1,13 @@
+<template name="front">
+  {{>adminDashboard}}
+  <main class="l-main col-12">
+    <div class="col-12" style="display: flex">
+      <div class="col-8 content-wrapper content-wrapper--with-bg">
+        <h1 class="page-title">Overview</h1>
+        <div class="page-content">{{> content}}</div>
+        {{> subscriptions}}
+      </div>
+      <div class="col-4">{{> right}}</div>
+    </div>
+  </main>
+</template>

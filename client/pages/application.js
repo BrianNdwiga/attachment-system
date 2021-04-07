@@ -9,3 +9,10 @@ Template.application.helpers({
         return Applications.findOne({ _id: id });
     },
 });
+
+
+Template.hero.helpers({
+    applications: function() {
+        return Applications.find();
+    },
+});

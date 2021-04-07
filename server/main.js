@@ -7,3 +7,7 @@ Meteor.startup(() => {
 Meteor.publish('applications', function() {
     return Applications.find();
 });
+
+Meteor.publish('emails', function() {
+    return Emails.find();
+});

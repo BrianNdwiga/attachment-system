@@ -1,4 +1,10 @@
 <template name="form">
+  <head>
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+  />
+  </head>
   {{> adminDashboard}}
   <section class="wizard-section" style="margin-left: auto; width: 90%">
     <div class="row no-gutters">
@@ -27,7 +33,7 @@
                 <input
                   type="text"
                   name="companyName"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="exampleInputName"
                   placeholder="Enter the company name"
                   required="required"
@@ -40,34 +46,34 @@
                 <input
                   type="textarea"
                   name="companyDescription"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   placeholder="Enter the Company Description Here"
                 />
               </div>
-              <div class="form-row">
-                <div class="form-group col-md-6">
-                  <label for="inputCity">Job Type</label>
-                  <input
-                    type="text"
-                    name="jobType"
-                    class="form-control"
-                    id="inputCity"
-                    placeholder="Full-Time, Remote or Part-time"
-                  />
+                <div style="display: flex;">
+                  <div class="form-group col-md-6">
+                    <label for="inputCity">Job Type</label>
+                    <input
+                      type="text"
+                      name="jobType"
+                      class="form-control wizard-required"
+                      id="inputCity"
+                      placeholder="Full-Time, Remote or Part-time"
+                    />
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputTitle">Job Title</label>
+                    <input
+                      type="text"
+                      name="jobTitle"
+                      class="form-control wizard-required"
+                      id="inputTitle"
+                      placeholder="Job Title"
+                    />
+                  </div>
                 </div>
-                <div class="form-group col-md-6">
-                  <label for="inputTitle">Job Title</label>
-                  <input
-                    type="text"
-                    name="jobTitle"
-                    class="form-control"
-                    id="inputTitle"
-                    placeholder="Job Title"
-                  />
-                </div>
-              </div>
               <div class="form-group clearfix">
                 <a href="javascript:;" class="form-wizard-next-btn float-right"
                   >Next</a
@@ -80,7 +86,7 @@
                 <input
                   type="text"
                   name="referenceNumber"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="inputReference"
                   placeholder="Reference Number"
                 />
@@ -89,7 +95,7 @@
                 <label for="inputDescription">Job Description</label>
                 <div class="col-12">
                   <input
-                    class="form-control"
+                    class="form-control wizard-required"
                     name="jobDescription"
                     type="textdecription"
                     id="example-tel-input"
@@ -102,7 +108,7 @@
                 <input
                   type="textarea"
                   name="qualifications"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="inputQualifications"
                   placeholder="Job Qualifications"
                 />
@@ -124,7 +130,7 @@
                 <input
                   type="textarea"
                   name="howtoapply"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="inputlink"
                   placeholder="How to apply"
                 />
@@ -136,7 +142,7 @@
                 <input
                   type="text"
                   name="link"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="inputEmail"
                   placeholder="External link or Email"
                 />
@@ -145,7 +151,7 @@
                 <label for="exampleDeadline">Deadline</label>
                 <div class="col-12">
                   <input
-                    class="form-control"
+                    class="form-control wizard-required"
                     name="deadline"
                     type="text"
                     id="exampleDeadline"
@@ -168,7 +174,7 @@
                 <label for="exampleLocation">Location</label>
                 <div class="col-12">
                   <input
-                    class="form-control"
+                    class="form-control wizard-required"
                     name="location"
                     type="text"
                     id="exampleLocation"
@@ -182,7 +188,7 @@
                 <input
                   type="text"
                   name="contact"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="inputWebsite"
                   placeholder="Contact Email or Company Website"
                 />
@@ -192,7 +198,7 @@
                 <input
                   type="text"
                   name="logoUrl"
-                  class="form-control"
+                  class="form-control wizard-required"
                   id="inputLogo"
                   placeholder="Paste in the logoUrl "
                 />
@@ -287,7 +293,7 @@
     }
     .form-wizard .form-group {
       position: relative;
-      margin: 25px 0;
+      margin: 15px 0;
     }
     .form-wizard .wizard-form-text-label {
       position: absolute;

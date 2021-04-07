@@ -1,0 +1,39 @@
+<template name="right">
+  <h3 style="color: black">NewsLetter Subscriptions</h3>
+  <h4 style="color: black; text-align: center">
+    Most Recent Email Updates
+  </h4>
+  <div style="overflow-y: scroll; height: 400px">
+    {{#each emails}}
+    <div class="card-trans" style="width: 96%; font-size: 16px; color: black;">
+      <div class="card-body">
+        <button type="button" class="close del-emails" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h6 class="card-subtitle mb-2 text-muted">Id : {{_id}}</h6>
+        <p>Email : {{subscribeEmail}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  <div class="calendar">
+    <div class="card-body" style="color:navy">
+      <h4 class="card-title" style="text-align: center;">Time</h4>
+      <iframe src="http://free.timeanddate.com/clock/i7r4ouc4/n170/fn7/fs20/tct/pct/ftb/th2" frameborder="0" width="128" height="30" allowtransparency="true" style="margin: auto;
+      width: 100%;">
+      </iframe>
+    </div>
+  </div>
+  <style>
+    .card-trans {
+      align-items: center;
+      padding: 15px;
+      border-radius: 0.8em;
+      margin: 10px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+      transition: 0.3s transform cubic-bezier(0.155, 1.105, 0.295, 1.12),
+        0.3s box-shadow,
+        0.3s -webkit-transform cubic-bezier(0.155, 1.105, 0.295, 1.12);
+    }
+  </style>
+</template>

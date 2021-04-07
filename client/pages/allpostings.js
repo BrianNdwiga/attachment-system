@@ -7,7 +7,7 @@ Meteor.subscribe("applications");
 // to display the form contents.
 Template.allPostings.helpers({
     applications: function() {
-        return Applications.find();
+        return Applications.find({}, { sort: { createdAt: -1 } });
     },
 });
 

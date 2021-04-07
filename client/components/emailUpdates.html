@@ -14,11 +14,12 @@
             <div class="box-content newleter-content">
               <label>Subscribe to our job notifications and career conventions.</label>
               <div id="frm_subscribe">
-                <form id="subscribe_popup">
+                <form id="subscribe_popup" action="" method="post">
                   <div>
-                    <input type="text" name="subscribeEmail" id="subscribe_pemail"><br>
+                    <input type="text" name="subscribeEmail" id="subscribe_pemail" required><br>
                     <div id="notification"></div>
-                    <a class="button subscribe" id="submit"><span>Submit</span></a> </div>
+                    <button type="submit" class="button subscribe">Subscribe</button>
+                    </div>
                 </form>
                 <div class="subscribe-bottom">
                   <input type="checkbox" id="newsletter_popup_dont_show_again">

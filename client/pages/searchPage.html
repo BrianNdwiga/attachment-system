@@ -11,35 +11,28 @@
     <div class="filter">
       <h3>Jobs matching your filter criteria</h3>
       <span> {{applicationsCount}} results</span>
-      <div id="filters">
+      <div id="filters" class="col-10">
         <span>Filters</span>
-        <div class="col-sm-4 mb-3">
+        <div class="col-md-6">
           <input
             type="text"
             id="myFilter"
             class="form-control"
             onkeyup="myFunction()"
-            placeholder="Search for attachments.."
+            placeholder="Search by Company Name"
+            style="width: 80%"
           />
         </div>
-        <span>Town :</span>
-        <div class="selectbox">
+        <div class="selectbox col-md-6" style="display: flex">
+          <span>Town :</span>
           <select name="" id="">
             <option value="">Nairobi</option>
             <option value="">Nakuru</option>
             <option value="">Mombasa</option>
           </select>
         </div>
-        <span>Department : </span>
-        <div class="selectbox">
-          <select name="" id="">
-            <option value="">IT</option>
-            <option value="">Finance</option>
-            <option value="">Human Resource</option>
-          </select>
-        </div>
       </div>
-      <div class="search area" >
+      <div class="search area">
         <div class="row" id="myItems">
           {{#each applications}}
           <div
@@ -55,8 +48,8 @@
             </div>
             <div class="card1-stacked col-6">
               <div class="card1-body">
-                <h5 class="card1-title">{{jobTitle}}</h5>
-                <a href=""><h6>{{companyName}}</h6></a>
+                <h5 class="card1-title">{{companyName}}</h5>
+                <h6>{{jobTitle}} </h6>
                 <p>Nairobi ,Kenya | {{jobType}}</p>
               </div>
               <div class="card1-action">
@@ -67,9 +60,15 @@
             <div class="vl"></div>
 
             <div class="apply col-3" style="width: 90%">
-              <a href="/postings/{{_id}}"><button class="button-apply apply">Apply</button></a>
+              <a href="/postings/{{_id}}"
+                ><button class="button-apply apply">Apply</button></a
+              >
               <div class="hl"></div>
-              <button name="accept" class="button-apply save js-show-liked" data-id="{{_id}}">
+              <button
+                name="accept"
+                class="button-apply save js-show-liked"
+                data-id="{{_id}}"
+              >
                 <i class="fa fa-heart"></i>
                 <span>Save</span>
               </button>
@@ -97,7 +96,7 @@
       outline: 0;
       box-sizing: border-box;
       transition: border 0.15s;
-      width: 300px;
+      height: 40px;
     }
     h5,
     h6 {
@@ -128,7 +127,8 @@
       outline: 0;
       box-sizing: border-box;
       transition: border 0.15s;
-      width: 220px;
+      width: 80%;
+      height: 40px;
     }
     span {
       padding: 10px;

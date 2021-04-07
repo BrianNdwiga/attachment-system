@@ -3,18 +3,15 @@ import { Meteor } from "meteor/meteor";
 
 Meteor.subscribe("emails");
 Template.emailUpdates.events({
-    "click #submit": function(event, template) {
-        // var subscribeEmail;
-        var subscribeEmail = $("#subscribe_pemail").val();
-        // var subscribeEmail = event.target.subscribeEmail.value
-        // subscribeName = event.target.subscribeName.value
+    "submit #subscribe_popup": function(event, template) {
+        var subscribeEmail;
+        subscribeEmail = event.target.subscribeEmail.value,
+            console.log("name:" + subscribeEmail);
         Emails.insert({
             subscribeEmail: subscribeEmail,
-            // subscribeName: Name,
             createdOn: new Date()
         });
-        // event.target.subscribeEmail.value = "";
-        // event.target.subscribeName.value = ""
+        event.target.subscribeEmail.value = "";
         event.preventDefault();
         console.log("Subscription sent");
         return false;
