@@ -5,9 +5,6 @@ Meteor.subscribe("applications");
 
 Template.saved.helpers({
     applications: function() {
-        return Applications.find();
-    },
-    showLiked() {
-        return Session.get('showLiked');
+        return Applications.find({ checked: true }, { sort: { number: -1 } });
     }
 });

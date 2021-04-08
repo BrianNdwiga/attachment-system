@@ -11,6 +11,7 @@ Template.allPostings.helpers({
     },
 });
 
+Session.setDefault('key', false);
 // events
 Template.allPostings.events({
     "click .js-show-liked" (event) {
@@ -18,4 +19,7 @@ Template.allPostings.events({
         Session.set("showLiked", true);
         console.log("saved");
     },
+    "change #checker": function(event) {
+        Applications.update(this._id, { $set: { checked: !this.checked } });
+    }
 });

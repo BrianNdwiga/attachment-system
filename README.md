@@ -3,7 +3,7 @@
 Clone or download this repo. Browse to wherever downloaded in your terminal.
 
 ```
-cd base-blaze
+cd Attachment Site
 meteor
 ```
 

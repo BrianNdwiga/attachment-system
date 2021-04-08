@@ -1,35 +1,23 @@
 <template name="saved">
-  {{#if showLiked}} 
-  <section id="header" class="jumbotron text-center" style="height: 70px">
+  <section id="header" class="jumbotron text-center" style="height: 40px">
     <h1 class="display-3" style="font-size: 30px">LIKED POSTINGS</h1>
   </section>
-
+  
   <section id="postings">
     <div class="container">
       <div class="row">
         {{#each applications}}
-        <div class="col-lg-6 mb-6">
-          <div class="card">
-            <div style="display: flex">
-              <img
-                id="companylogo"
-                src="{{logoUrl}}"
-                alt=""
-                style="width: 65px;
-                height: 40px;"
-              />
-              <a href="" class="btn btn-outline-danger btn-sm js-show-liked" id="like"
-                ><i class="far fa-heart"></i
-              ></a>
+        <div class="courses-container col-lg-6 mb-6">
+          <div class="course">
+            <div class="course-preview">
+              <h6>Company Name</h6>
+              <h2>{{companyName}}</h2>
+              <a href="/allPostings">View all Attachments <i class="fas fa-chevron-right"></i></a>
             </div>
-            <div class="card-body">
-              <h4 class="card-title" style="width: 100%;">
-                <strong>We need a {{jobTitle}}</strong>
-              </h4>
-              <p class="card-text"><strong>{{companyName}}</strong></p>
-              <p class="card-text">{{jobType}}</p>
-              <p class="card-text"><strong>{{deadline}}</strong></p>
-              <a href="/postings/{{_id}}" class="btn btn-outline btn-sm">Read More</a>
+            <div class="course-info">
+              <h6>{{jobType}}</h6>
+              <h2>{{jobTitle}}</h2>
+              <a href="/postings/{{_id}}"><button class="btn">Continue</button></a>
             </div>
           </div>
         </div>
@@ -39,25 +27,108 @@
   </section>
 
   <style>
-    .companylogo {
-      border-radius: 8px;
-      padding: 5px;
-    }
-    .card {
-      font-size: 16px;
-      color: black;
-    }
-    .btn {
-      font-size: 14px;
-    }
-    #like {
-      height: 25px;
-      position: absolute;
-      right: 20px;
-      margin: 10px;
-    }
+
+
+* {
+	box-sizing: border-box;
+}
+
+
+body {
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+}
+
+.course {
+	background-color: #fff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	display: flex;
+	max-width: 96%;
+	margin: 20px;
+	overflow: hidden;
+	width: 600px;
+}
+
+.course h6 {
+	opacity: 0.6;
+	margin: 0;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.course h2 {
+	letter-spacing: 1px;
+	margin: 10px 0;
+}
+
+.course-preview {
+	background-color: #ec5574;
+	color: #fff;
+	padding: 30px;
+	max-width: 250px;
+}
+
+.course-preview a {
+	color: #fff;
+	display: inline-block;
+	font-size: 12px;
+	opacity: 0.6;
+	margin-top: 30px;
+	text-decoration: none;
+}
+
+.course-info {
+	padding: 30px;
+	position: relative;
+	width: 100%;
+}
+
+.progress-container {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	text-align: right;
+	width: 150px;
+}
+
+.progress {
+	background-color: #ddd;
+	border-radius: 3px;
+	height: 5px;
+	width: 100%;
+}
+
+.progress::after {
+	border-radius: 3px;
+	background-color: #ec5574;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 5px;
+	width: 66%;
+}
+
+.progress-text {
+	font-size: 10px;
+	opacity: 0.6;
+	letter-spacing: 1px;
+}
+
+.btn {
+	background-color: #ec5574;
+	border: 0;
+	border-radius: 50px;
+	box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	font-size: 16px;
+	padding: 12px 25px;
+	position: absolute;
+	bottom: 30px;
+	right: 30px;
+	letter-spacing: 1px;
+}
   </style>
-  {{else}}
-  <h1 style="font: size 20px">No liked Postings</h1>
-  {{/if}}
 </template>
