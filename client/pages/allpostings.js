@@ -10,15 +10,8 @@ Template.allPostings.helpers({
         return Applications.find({}, { sort: { createdAt: -1 } });
     },
 });
-
-Session.setDefault('key', false);
 // events
 Template.allPostings.events({
-    "click .js-show-liked" (event) {
-        event.preventDefault();
-        Session.set("showLiked", true);
-        console.log("saved");
-    },
     "change #checker": function(event) {
         Applications.update(this._id, { $set: { checked: !this.checked } });
     }

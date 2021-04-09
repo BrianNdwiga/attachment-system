@@ -7,27 +7,26 @@
     <div class="container">
       <div class="row">
         {{#each applications}}
-        <div class="col-lg-3 mb-3">
-          <div class="card">
-            <div style="display: flex">
-              <img
-                id="companylogo"
-                src="{{logoUrl}}"
-                alt=""
-                style="width: 65px;
-                height: 40px;"
-              />
-            </div>
-            Check to save : 
-              <input type="checkbox" checked="{{checked}}" id="checker">
-            <div class="card-body">
-              <h4 class="card-title" style="width: 100%;">
-                <strong>We need a {{jobTitle}}</strong>
-              </h4>
-              <p class="card-text"><strong>{{companyName}}</strong></p>
-              <p class="card-text">{{jobType}}</p>
-              <p class="card-text"><strong>{{deadline}}</strong></p>
-              <a href="/postings/{{_id}}" class="btn btn-outline-success btn-sm">Read More</a>
+        <div class="container" style="display: contents">
+          <div class="grid-wrapper grid-col-2 col-lg-3 mb-3">
+            <div class="selection-wrapper">
+              <label for="selected-item" class="selected-label">
+                <!-- <input type="checkbox" name="selected-item" id="selected-item-1"> -->
+                <input type="checkbox" checked="{{checked}}" id="checker" />
+                <span class="icon"></span>
+                <div class="selected-content">
+                  <img src="{{logoUrl}}" alt="" />
+                  <h4>{{companyName}}</h4>
+                  <h5>{{jobTitle}}</h5>
+                  <h6>{{jobType}}</h6>
+                  <a
+                    href="/postings/{{_id}}"
+                    class="btn btn-sm"
+                    style="background-color:#ec5574; color: black; font-size: 14px;border-radius: 0.5em;"
+                    >Read More</a
+                  >
+                </div>
+              </label>
             </div>
           </div>
         </div>
@@ -37,22 +36,168 @@
   </section>
 
   <style>
-    .companylogo {
-      border-radius: 8px;
-      padding: 5px;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .card {
-      font-size: 16px;
-      color: black;
+    body {
+      font-family: "Open Sans", sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 400;
+      background: #f0f3f6;
+      color: #3a3a3a;
     }
-    .btn {
+    hr {
+      margin: 20px 0;
+      border: none;
+      border-bottom: 1px solid #d9d9d9;
+    }
+    label,
+    input {
+      cursor: pointer;
+    }
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: 600;
+      line-height: 1.3;
+      color: #1f2949;
+    }
+    h2 {
+      font-size: 24px;
+    }
+    h3 {
+      font-size: 18px;
+    }
+    h4 {
       font-size: 14px;
     }
-    #like {
-      height: 25px;
+    h5 {
+      font-size: 12px;
+      font-weight: 400;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      max-width: 99vw;
+      margin: 15px auto;
+      padding: 0 15px;
+    }
+
+    .grid-wrapper {
+      display: grid;
+      grid-gap: 30px;
+      place-items: center;
+      place-content: center;
+    }
+    .grid-col-auto {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 0.1fr));
+      grid-template-rows: auto;
+    }
+    .grid-col-1 {
+      grid-template-columns: repeat(1, auto);
+      grid-template-rows: repeat(1, auto);
+    }
+    .grid-col-2 {
+      grid-template-columns: repeat(2, auto);
+      grid-template-rows: repeat(1, auto);
+    }
+    .grid-col-3 {
+      grid-template-columns: repeat(3, auto);
+      grid-template-rows: repeat(1, auto);
+    }
+    .grid-col-4 {
+      grid-template-columns: repeat(4, auto);
+      grid-template-rows: repeat(1, auto);
+    }
+
+    /* ******************* Selection Radio Item */
+
+    .selected-content {
+      text-align: center;
+      border-radius: 3px;
+      box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0);
+      border: solid 2px transparent;
+      background: #fff;
+      max-width: 280px;
+      height: 330px;
+      padding: 15px;
+      display: grid;
+      grid-gap: 15px;
+      place-content: center;
+      transition: 0.3s ease-in-out all;
+    }
+
+    .selected-content img {
+      width: 60%;
+      height: revert;
+      margin: 0 auto;
+    }
+    .selected-content h4 {
+      font-size: 16px;
+      letter-spacing: -0.24px;
+      text-align: center;
+      color: #1f2949;
+    }
+    .selected-content h5 {
+      font-size: 14px;
+      line-height: 1.4;
+      text-align: center;
+      color: #686d73;
+    }
+
+    .selected-label {
+      position: relative;
+    }
+    .selected-label input {
+      margin: revert;
+      display: block;
+    }
+    .selected-label .icon {
+      margin-top: 10px;
+      width: 20px;
+      height: 20px;
+      border: solid 2px #e3e3e3;
+      border-radius: 50%;
       position: absolute;
-      right: 20px;
-      margin: 10px;
+      top: 15px;
+      left: 15px;
+      transition: 0.3s ease-in-out all;
+      transform: scale(1);
+      z-index: 1;
+    }
+    .selected-label .icon:before {
+      content: "\f00c";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 900;
+      font-size: 12px;
+      color: #000;
+      text-align: center;
+      opacity: 0;
+      transition: 0.2s ease-in-out all;
+      transform: scale(2);
+    }
+    .selected-label input:checked + .icon {
+      background: #ec5574;
+      border-color: #ec5574;
+      transform: scale(1.2);
+    }
+    .selected-label input:checked + .icon:before {
+      color: #fff;
+      opacity: 1;
+      transform: scale(0.8);
+    }
+    .selected-label input:checked ~ .selected-content {
+      box-shadow: 0 2px 4px 0 rgba(219, 215, 215, 0.5);
+      border: solid 2px #ec5574;
     }
   </style>
 </template>

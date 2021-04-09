@@ -1,4 +1,7 @@
 <template name="adminDashboard">
+  <head>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+  </head>
   <body class="sidebar-is-reduced">
     <header class="l-header">
       <div class="l-header__inner clearfix">
@@ -51,7 +54,7 @@
               <li
                 class="c-menu__item has-submenu"
                 data-toggle="tooltip"
-                title="Gifts"
+                title=""
               >
                 <div class="c-menu__item__inner">
                   <i class="fas fa-list"></i>
@@ -92,7 +95,7 @@
             <li
               class="c-menu__item has-submenu"
               data-toggle="tooltip"
-              title="Settings"
+              title=""
             >
               <div class="c-menu__item__inner" id="print">
                 <i class="fa fa-print"></i>
@@ -107,26 +110,22 @@
     </div>
   </body>
   <script>
-    let jobupload = (() => {
-      let global = {
+    var jobupload = (() => {
+      var global = {
         tooltipOptions: {
           placement: "right",
         },
         menuClass: ".c-menu",
       };
 
-      let menuChangeActive = (el) => {
-        let hasSubmenu = $(el).hasClass("has-submenu");
+      var menuChangeActive = (el) => {
+        var hasSubmenu = $(el).hasClass("has-submenu");
         $(global.menuClass + " .is-active").removeClass("is-active");
         $(el).addClass("is-active");
-
-        // if (hasSubmenu) {
-        // 	$(el).find("ul").slideDown();
-        // }
       };
 
-      let sidebarChangeWidth = () => {
-        let $menuItemsTitle = $("li .menu-item__title");
+      var sidebarChangeWidth = () => {
+        var $menuItemsTitle = $("li .menu-item__title");
 
         $("body").toggleClass("sidebar-is-reduced sidebar-is-expanded");
         $(".hamburger-toggle").toggleClass("is-opened");
