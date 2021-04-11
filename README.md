@@ -16,4 +16,3 @@ Sample Pictures
 ![All Postings](https://user-images.githubusercontent.com/67043559/114324155-49469f80-9b31-11eb-93ee-576720d93646.png)
 ![Register Page](https://user-images.githubusercontent.com/67043559/114324162-4e0b5380-9b31-11eb-82dd-776e69d12d3e.png)
 ![Login](https://user-images.githubusercontent.com/67043559/114324161-4d72bd00-9b31-11eb-9b56-c8013d9c1041.png)
-![Dashboard FrontPage](https://user-images.githubusercontent.com/67043559/114324158-4c419000-9b31-11eb-88ab-4797f238e0cd.png)
