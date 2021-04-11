@@ -6,6 +6,13 @@ Clone or download this repo. Browse to wherever downloaded in your terminal.
 cd Attachment Site
 meteor
 ```
+Hi!
+
+You need to run the command:
+
+meteor npm install
+
+before you can start up this project.
 
 Open up http://localhost:3000 and see this.
 
